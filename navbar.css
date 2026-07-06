@@ -145,77 +145,7 @@
    Responsive
    ========================================================= */
 
-/* Default: mobile layout (drawer hidden, hamburger visible) */
-.navbar__nav {
-  display: none;
-}
-
-.navbar__cta--desktop {
-  display: none;
-}
-
-.navbar__toggle {
-  display: inline-flex;
-}
-
-/* Mobile drawer styles (visible when body has .nav-open) */
-body.nav-open {
-  overflow: hidden;
-}
-
-body.nav-open .navbar__nav {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 0;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--color-white);
-  border-top: 1px solid rgba(11, 29, 58, 0.08);
-  border-bottom: 1px solid rgba(11, 29, 58, 0.08);
-  padding: 0.5rem 1.25rem 1rem;
-  box-shadow: 0 12px 24px rgba(11, 29, 58, 0.08);
-  animation: navDrop 0.18s ease-out;
-}
-
-body.nav-open .navbar__link {
-  padding: 0.85rem 0.25rem;
-  border-bottom: 1px solid rgba(11, 29, 58, 0.06);
-  font-size: 1rem;
-}
-
-body.nav-open .navbar__link:last-of-type {
-  border-bottom: none;
-}
-
-body.nav-open .navbar__link.is-active::after {
-  left: 0.25rem;
-  right: auto;
-  width: 3px;
-  height: 60%;
-  bottom: auto;
-  top: 20%;
-  border-radius: 2px;
-}
-
-body.nav-open .navbar__cta--mobile {
-  display: inline-flex;
-  justify-content: center;
-  margin-top: 0.75rem;
-  padding: 0.85rem 1.1rem;
-}
-
-@keyframes navDrop {
-  from { opacity: 0; transform: translateY(-6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Hide the in-drawer mobile CTA by default */
-.navbar__cta--mobile {
-  display: none;
-}
+/* Inline header on every breakpoint — no drawer, no hamburger. */
 
 /* ---------- Desktop (≥900px) ---------- */
 @media (min-width: 900px) {
@@ -250,22 +180,55 @@ body.nav-open .navbar__cta--mobile {
   .navbar__cta--desktop {
     display: inline-flex;
   }
+}
 
-  .navbar__cta--mobile {
+/* ---------- Small/medium screens (<900px) ---------- */
+@media (max-width: 899px) {
+  /* Hide the Download CV CTA on smaller screens — links stay inline */
+  .navbar__cta--desktop {
     display: none;
   }
 
-  .navbar__toggle {
-    display: none;
+  /* Shrink link spacing so all 6 links fit inline without the CTA */
+  .navbar__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto; /* push nav to the right where the CTA used to sit */
+    position: static;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .navbar__link {
+    padding-block: 0.4rem;
+    padding-inline: 0.25rem;
+    border-bottom: 0;
+    font-size: 0.85rem;
+  }
+
+  .navbar__link.is-active::after {
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    width: auto;
+    height: 2px;
+    top: auto;
   }
 }
 
-/* ---------- Small-screen polish ---------- */
+/* ---------- Very narrow screens (≤480px) ---------- */
 @media (max-width: 480px) {
-  .navbar__name {
-    /* Save room on very narrow screens */
-    max-width: 180px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .navbar__nav {
+    gap: 0.5rem;
+  }
+
+  .navbar__link {
+    font-size: 0.78rem;
+    padding-inline: 0.15rem;
   }
 }

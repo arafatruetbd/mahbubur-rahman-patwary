@@ -45,24 +45,11 @@
         <a href="#resume" class="navbar__link">Resume</a>
         <a href="#gallery" class="navbar__link">Gallery</a>
         <a href="#contact" class="navbar__link">Contact</a>
-        <a href="resume.jpg" download class="navbar__cta navbar__cta--mobile">
-          <i class="bi bi-download" aria-hidden="true"></i> Download CV
-        </a>
       </nav>
 
       <a href="resume.jpg" download class="navbar__cta navbar__cta--desktop">
         <i class="bi bi-download" aria-hidden="true"></i> Download CV
       </a>
-
-      <button
-        type="button"
-        class="navbar__toggle"
-        aria-label="Toggle navigation"
-        aria-controls="primary-nav"
-        aria-expanded="false"
-      >
-        <i class="bi bi-list" aria-hidden="true"></i>
-      </button>
     </div>
   </header>
 
@@ -505,36 +492,9 @@
   </footer>
 
   <!-- ====================== NAVBAR TOGGLE SCRIPT ====================== -->
+  <!-- Toggle script removed: header now stays inline on every breakpoint -->
+
   <script>
-    (function () {
-      const toggle = document.querySelector(".navbar__toggle");
-      const nav = document.querySelector(".navbar__nav");
-      if (!toggle || !nav) return;
-
-      const setOpen = (open) => {
-        document.body.classList.toggle("nav-open", open);
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        const icon = toggle.querySelector("i");
-        if (icon) {
-          icon.className = open ? "bi bi-x-lg" : "bi bi-list";
-        }
-      };
-
-      toggle.addEventListener("click", () => {
-        setOpen(!document.body.classList.contains("nav-open"));
-      });
-
-      // Close drawer when a nav link is clicked (mobile UX)
-      nav.querySelectorAll(".navbar__link").forEach((link) => {
-        link.addEventListener("click", () => setOpen(false));
-      });
-
-      // Close drawer on resize up to desktop
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 900) setOpen(false);
-      });
-    })();
-
     // Skills bar reveal on scroll
     (function () {
       const skills = document.querySelector(".skills");

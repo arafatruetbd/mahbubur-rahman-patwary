@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahbubur Rahman Patwary — Portfolio</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons for socials -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="hero.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="skills.css" />
+  <link rel="stylesheet" href="stats.css" />
+  <link rel="stylesheet" href="prefooter.css" />
+  <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ====================== NAVBAR ====================== -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__brand" aria-label="Mahbubur Rahman Patwary — Home">
+        <span class="navbar__logo" aria-hidden="true">MRP</span>
+        <span class="navbar__name">Mahbubur Rahman Patwary</span>
+      </a>
+
+      <nav class="navbar__nav" aria-label="Primary">
+        <a href="#" class="navbar__link is-active">Home</a>
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#skills" class="navbar__link">Skills</a>
+        <a href="#resume" class="navbar__link">Resume</a>
+        <a href="#gallery" class="navbar__link">Gallery</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#" class="navbar__cta navbar__cta--mobile">
+          <i class="bi bi-download" aria-hidden="true"></i> Download CV
+        </a>
+      </nav>
+
+      <a href="#" class="navbar__cta navbar__cta--desktop">
+        <i class="bi bi-download" aria-hidden="true"></i> Download CV
+      </a>
+
+      <button
+        type="button"
+        class="navbar__toggle"
+        aria-label="Toggle navigation"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <i class="bi bi-list" aria-hidden="true"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ====================== HERO SECTION ====================== -->
+  <main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <!-- Decorative background elements for slanted polygons and dot grid -->
+    <div class="hero__bg-shapes" aria-hidden="true">
+      <div class="hero__shape hero__shape--left-top"></div>
+      <div class="hero__shape hero__shape--left-mid"></div>
+      <div class="hero__shape hero__shape--right-mid"></div>
+      <div class="hero__shape hero__shape--right-top"></div>
+      <div class="hero__dots"></div>
+    </div>
+
+    <div class="container hero__inner">
+      <!-- Left: text content -->
+      <div class="hero__content">
+        <p class="hero__eyebrow">Hello, I'm</p>
+        <h1 id="hero-title" class="hero__title">
+          Mahbubur<br />Rahman Patwary
+        </h1>
+        <p class="hero__subtitle">
+          Human Rights Advocate <span class="hero__divider">|</span>
+          Social Worker <span class="hero__divider">|</span> Entrepreneur
+        </p>
+        <p class="hero__description">
+          Dedicated to human rights, social justice, and community
+          development. Working for a better society through advocacy,
+          awareness and action.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#about" class="btn btn--primary">
+            <i class="bi bi-person"></i>
+            Learn More About Me
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <i class="bi bi-envelope"></i>
+            Contact Me
+          </a>
+        </div>
+
+        <ul class="hero__socials" aria-label="Social links">
+          <li>
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter" class="social-icon">
+              <i class="bi bi-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn" class="social-icon">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Email" class="social-icon">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: portrait composition -->
+      <div class="hero-image-wrapper">
+        <img
+          class="hero-image-wrapper__photo"
+          src="me.png"
+          alt="Portrait of Mahbubur Rahman Patwary"
+          decoding="async"
+          width="600"
+          height="700"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== ABOUT SECTION ====================== -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container about__inner">
+      <!-- Left: text -->
+      <div class="about__intro-col">
+        <span class="about__heading-eyebrow">About Me</span>
+        <h2 id="about-title" class="about__heading">Who I Am</h2>
+        <span class="about__heading-underline" aria-hidden="true"></span>
+
+        <p class="about__intro">
+          I am a human rights activist, social worker, anti-drug campaigner,
+          public speaker and entrepreneur. I am the Founder &amp; CEO of
+          <strong>Raphael Design &amp; Development</strong>.
+        </p>
+        <p class="about__intro">
+          I believe in serving humanity and creating meaningful impact in
+          people's lives.
+        </p>
+
+        <a href="#" class="about__cta">
+          <i class="bi bi-person-badge" aria-hidden="true"></i>
+          More About Me
+        </a>
+      </div>
+
+      <!-- Right: feature cards -->
+      <div class="about__cards" role="list">
+        <article class="feature-card" role="listitem">
+          <span class="feature-card__icon" aria-hidden="true">
+            <i class="bi bi-people-fill"></i>
+          </span>
+          <h3 class="feature-card__title">Human Rights</h3>
+          <p class="feature-card__desc">
+            Working for human rights awareness and protection of vulnerable
+            communities.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <span class="feature-card__icon" aria-hidden="true">
+            <i class="bi bi-heart-fill"></i>
+          </span>
+          <h3 class="feature-card__title">Social Work</h3>
+          <p class="feature-card__desc">
+            Engaged in various social welfare activities for community
+            development.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <span class="feature-card__icon" aria-hidden="true">
+            <i class="bi bi-megaphone-fill"></i>
+          </span>
+          <h3 class="feature-card__title">Anti-Drug Campaigner</h3>
+          <p class="feature-card__desc">
+            Spreading awareness against drugs and working towards a drug-free
+            society.
+          </p>
+        </article>
+
+        <article class="feature-card" role="listitem">
+          <span class="feature-card__icon" aria-hidden="true">
+            <i class="bi bi-briefcase-fill"></i>
+          </span>
+          <h3 class="feature-card__title">Entrepreneur</h3>
+          <p class="feature-card__desc">
+            Founder &amp; CEO of Raphael Design &amp; Development, building
+            ventures that serve people.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SKILLS SECTION ====================== -->
+  <section class="skills" id="skills" aria-labelledby="skills-title">
+    <div class="container skills__inner">
+      <div class="skills__heading-wrap">
+        <span class="skills__eyebrow">My Skills</span>
+        <h2 id="skills-title" class="skills__heading">What I Do Best</h2>
+        <span class="skills__heading-underline" aria-hidden="true"></span>
+      </div>
+
+      <div class="skills__grid">
+        <!-- 1. Leadership 50% -->
+        <div class="skill" style="--p: 50%">
+          <div class="skill__head">
+            <span class="skill__label-wrap">
+              <span class="skill__icon" aria-hidden="true">
+                <i class="bi bi-people-fill"></i>
+              </span>
+              <span class="skill__label">Leadership</span>
+            </span>
+            <span class="skill__percent">50%</span>
+          </div>
+          <div
+            class="skill__track"
+            role="progressbar"
+            aria-label="Leadership"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="50"
+          >
+            <span class="skill__fill" style="width: 50%"></span>
+          </div>
+        </div>
+
+        <!-- 2. Public Speaking 85% -->
+        <div class="skill" style="--p: 85%">
+          <div class="skill__head">
+            <span class="skill__label-wrap">
+              <span class="skill__icon" aria-hidden="true">
+                <i class="bi bi-mic-fill"></i>
+              </span>
+              <span class="skill__label">Public Speaking</span>
+            </span>
+            <span class="skill__percent">85%</span>
+          </div>
+          <div
+            class="skill__track"
+            role="progressbar"
+            aria-label="Public Speaking"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="85"
+          >
+            <span class="skill__fill" style="width: 85%"></span>
+          </div>
+        </div>
+
+        <!-- 3. Community Outreach 50% -->
+        <div class="skill" style="--p: 50%">
+          <div class="skill__head">
+            <span class="skill__label-wrap">
+              <span class="skill__icon" aria-hidden="true">
+                <i class="bi bi-people"></i>
+              </span>
+              <span class="skill__label">Community Outreach</span>
+            </span>
+            <span class="skill__percent">50%</span>
+          </div>
+          <div
+            class="skill__track"
+            role="progressbar"
+            aria-label="Community Outreach"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="50"
+          >
+            <span class="skill__fill" style="width: 50%"></span>
+          </div>
+        </div>
+
+        <!-- 4. Project Management 85% -->
+        <div class="skill" style="--p: 85%">
+          <div class="skill__head">
+            <span class="skill__label-wrap">
+              <span class="skill__icon" aria-hidden="true">
+                <i class="bi bi-gear-fill"></i>
+              </span>
+              <span class="skill__label">Project Management</span>
+            </span>
+            <span class="skill__percent">85%</span>
+          </div>
+          <div
+            class="skill__track"
+            role="progressbar"
+            aria-label="Project Management"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="85"
+          >
+            <span class="skill__fill" style="width: 85%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== STATS SECTION ====================== -->
+  <section class="stats" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat">
+          <span class="stat__icon" aria-hidden="true">
+            <i class="bi bi-award-fill"></i>
+          </span>
+          <div class="stat__body">
+            <span class="stat__number">10<span class="stat__plus">+</span></span>
+            <span class="stat__label">Years of Experience</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <span class="stat__icon" aria-hidden="true">
+            <i class="bi bi-people-fill"></i>
+          </span>
+          <div class="stat__body">
+            <span class="stat__number">50<span class="stat__plus">+</span></span>
+            <span class="stat__label">Projects Completed</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <span class="stat__icon" aria-hidden="true">
+            <i class="bi bi-trophy-fill"></i>
+          </span>
+          <div class="stat__body">
+            <span class="stat__number">30<span class="stat__plus">+</span></span>
+            <span class="stat__label">Awards &amp; Recognitions</span>
+          </div>
+        </div>
+
+        <div class="stat">
+          <span class="stat__icon" aria-hidden="true">
+            <i class="bi bi-hand-thumbs-up-fill"></i>
+          </span>
+          <div class="stat__body">
+            <span class="stat__number">1000<span class="stat__plus">+</span></span>
+            <span class="stat__label">People Impacted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== PRE-FOOTER (RESUME / GALLERY / CONTACT) ====================== -->
+  <section class="prefooter" aria-label="Resume, Gallery and Contact">
+    <div class="container prefooter__inner">
+      <!-- Column 1: Resume -->
+      <section class="prefooter__col prefooter__col--resume" aria-labelledby="prefooter-resume-title">
+        <span class="prefooter__eyebrow" id="prefooter-resume-eyebrow">Resume</span>
+        <h2 class="prefooter__heading" id="prefooter-resume-title">My Resume</h2>
+        <span class="prefooter__heading-underline" aria-hidden="true"></span>
+        <p class="prefooter__text">
+          A brief summary of my education, experience and professional journey.
+        </p>
+        <a href="#" class="btn btn--outline-light">
+          <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+          View Resume
+        </a>
+      </section>
+
+      <!-- Column 2: Gallery -->
+      <section class="prefooter__col prefooter__col--gallery" aria-labelledby="prefooter-gallery-title">
+        <span class="prefooter__eyebrow" id="prefooter-gallery-eyebrow">Gallery</span>
+        <h2 class="prefooter__heading" id="prefooter-gallery-title">My Gallery</h2>
+        <span class="prefooter__heading-underline" aria-hidden="true"></span>
+
+        <div class="prefooter__thumbs" role="list" aria-label="Gallery preview">
+          <a href="#" class="prefooter__thumb" role="listitem" aria-label="View gallery image 1">
+            <img
+              src="https://via.placeholder.com/120x120/102a55/d4a437?text=G1"
+              alt="Gallery thumbnail 1 of community work"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a href="#" class="prefooter__thumb" role="listitem" aria-label="View gallery image 2">
+            <img
+              src="https://via.placeholder.com/120x120/102a55/d4a437?text=G2"
+              alt="Gallery thumbnail 2 of community work"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a href="#" class="prefooter__thumb" role="listitem" aria-label="View gallery image 3">
+            <img
+              src="https://via.placeholder.com/120x120/102a55/d4a437?text=G3"
+              alt="Gallery thumbnail 3 of community work"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <a href="#" class="prefooter__thumb" role="listitem" aria-label="View gallery image 4">
+            <img
+              src="https://via.placeholder.com/120x120/102a55/d4a437?text=G4"
+              alt="Gallery thumbnail 4 of community work"
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        <a href="#" class="btn btn--outline-light">
+          <i class="bi bi-images" aria-hidden="true"></i>
+          View Gallery
+        </a>
+      </section>
+
+      <!-- Column 3: Contact -->
+      <section class="prefooter__col prefooter__col--contact" aria-labelledby="prefooter-contact-title">
+        <span class="prefooter__eyebrow" id="prefooter-contact-eyebrow">Contact</span>
+        <h2 class="prefooter__heading" id="prefooter-contact-title">Get In Touch</h2>
+        <span class="prefooter__heading-underline" aria-hidden="true"></span>
+
+        <ul class="prefooter__contact-list">
+          <li class="prefooter__contact-item">
+            <span class="prefooter__contact-icon" aria-hidden="true">
+              <i class="bi bi-telephone-fill"></i>
+            </span>
+            <a href="tel:+8801234567980" class="prefooter__contact-link">
+              +880 1234 567980
+            </a>
+          </li>
+          <li class="prefooter__contact-item">
+            <span class="prefooter__contact-icon" aria-hidden="true">
+              <i class="bi bi-envelope-fill"></i>
+            </span>
+            <a href="mailto:mahbub.patwary@email.com" class="prefooter__contact-link">
+              mahbub.patwary@email.com
+            </a>
+          </li>
+          <li class="prefooter__contact-item">
+            <span class="prefooter__contact-icon" aria-hidden="true">
+              <i class="bi bi-geo-alt-fill"></i>
+            </span>
+            <span class="prefooter__contact-link">Chattagram, Bangladesh</span>
+          </li>
+        </ul>
+
+        <ul class="prefooter__socials" aria-label="Social links">
+          <li>
+            <a href="#" aria-label="Facebook" class="prefooter__social">
+              <i class="bi bi-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Twitter" class="prefooter__social">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="LinkedIn" class="prefooter__social">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" aria-label="Instagram" class="prefooter__social">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <p class="footer__copy">
+        &copy; 2024 Mahbubur Rahman Patwary <span class="footer__sep" aria-hidden="true">|</span>
+        All Rights Reserved
+      </p>
+    </div>
+  </footer>
+
+  <!-- ====================== NAVBAR TOGGLE SCRIPT ====================== -->
+  <script>
+    (function () {
+      const toggle = document.querySelector(".navbar__toggle");
+      const nav = document.querySelector(".navbar__nav");
+      if (!toggle || !nav) return;
+
+      const setOpen = (open) => {
+        document.body.classList.toggle("nav-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        const icon = toggle.querySelector("i");
+        if (icon) {
+          icon.className = open ? "bi bi-x-lg" : "bi bi-list";
+        }
+      };
+
+      toggle.addEventListener("click", () => {
+        setOpen(!document.body.classList.contains("nav-open"));
+      });
+
+      // Close drawer when a nav link is clicked (mobile UX)
+      nav.querySelectorAll(".navbar__link").forEach((link) => {
+        link.addEventListener("click", () => setOpen(false));
+      });
+
+      // Close drawer on resize up to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 900) setOpen(false);
+      });
+    })();
+
+    // Skills bar reveal on scroll
+    (function () {
+      const skills = document.querySelector(".skills");
+      if (!skills) return;
+
+      if (!("IntersectionObserver" in window)) {
+        skills.classList.add("is-visible");
+        return;
+      }
+
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              skills.classList.add("is-visible");
+              io.unobserve(skills);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      io.observe(skills);
+    })();
+  </script>
+</body>
+</html>

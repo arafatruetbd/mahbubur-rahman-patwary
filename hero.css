@@ -1,0 +1,418 @@
+/* =========================================================
+   Hero Section — Mahbubur Rahman Patwary
+   Redesigned to match the reference mockup.
+   ========================================================= */
+
+/* ---------- Hero Base & Background ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Full-bleed dark navy background — stretches edge-to-edge of the viewport */
+  background: linear-gradient(135deg, #0b1d3a 0%, #07142a 100%);
+  color: var(--color-white);
+  /* Spacious vertical rhythm; main height comes from min-height */
+  padding-block: clamp(2.5rem, 4vw, 4rem);
+  /* Fill the visible screen below the sticky navbar */
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+/* ---------- Geometric Background Shapes ---------- */
+.hero__bg-shapes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero__shape {
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero__shape--left-top {
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(135deg, #040c19 0%, transparent 85%);
+  clip-path: polygon(0 0, 75% 0, 30% 100%, 0 100%);
+  opacity: 0.85;
+}
+
+.hero__shape--left-mid {
+  bottom: 0;
+  left: 0;
+  width: 45%;
+  height: 70%;
+  background: linear-gradient(45deg, #030a15 0%, transparent 100%);
+  clip-path: polygon(0 25%, 100% 100%, 0 100%);
+  opacity: 0.9;
+}
+
+.hero__shape--right-mid {
+  top: 10%;
+  right: 0;
+  width: 50%;
+  height: 90%;
+  background: linear-gradient(225deg, #040c19 0%, transparent 80%);
+  clip-path: polygon(40% 0, 100% 20%, 100% 100%, 0 85%);
+  opacity: 0.8;
+}
+
+.hero__shape--right-top {
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 60%;
+  background: linear-gradient(135deg, #030a15 20%, transparent 100%);
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+  opacity: 0.95;
+}
+
+/* Dot Grid Overlay in Top Right */
+.hero__dots {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 176px;
+  height: 176px;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+
+/* ---------- Grid Layout ---------- */
+.hero__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .hero__inner {
+    grid-template-columns: 52fr 48fr;
+  }
+}
+
+/* ---------- Text Content (Left Column) ---------- */
+.hero__content {
+  max-width: 600px;
+}
+
+.hero__eyebrow {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  font-weight: 500;
+  color: #cca248; /* Warm Gold */
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.hero__title {
+  color: var(--color-white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+  margin-bottom: 0.75rem;
+}
+
+.hero__subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.9rem, 1.15vw, 1rem);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.2px;
+}
+
+.hero__divider {
+  color: rgba(255, 255, 255, 0.4);
+  margin-inline: 0.5rem;
+  font-weight: 300;
+}
+
+.hero__description {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  max-width: 540px;
+}
+
+/* ---------- Action Buttons ---------- */
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.7rem 1.3rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, background 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+}
+
+.btn i {
+  font-size: 1.1rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--primary {
+  background: #cca248; /* Warm Gold from Mockup */
+  color: var(--color-white);
+  border-color: #cca248;
+  box-shadow: 0 4px 14px rgba(204, 162, 72, 0.2);
+}
+
+.btn--primary:hover {
+  background: #d8b25d;
+  border-color: #d8b25d;
+  color: var(--color-white);
+  box-shadow: 0 6px 20px rgba(204, 162, 72, 0.3);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-white);
+  border-color: rgba(204, 162, 72, 0.5); /* Semi-transparent gold border */
+}
+
+.btn--outline:hover {
+  background: rgba(204, 162, 72, 0.08);
+  border-color: #cca248;
+  color: var(--color-white);
+}
+
+/* ---------- Social Media Links ---------- */
+.hero__socials {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+  border: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon:hover {
+  background: #cca248;
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* ---------- Portrait Composition (Right Column) ---------- */
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  /* Fill the hero's right column proportional to viewport height */
+  height: clamp(420px, calc(100vh - var(--header-height) - 4rem), 640px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Central circular backdrop inside the gold ring */
+.hero-image-wrapper::before {
+  content: "";
+  position: absolute;
+  /* Bigger backdrop to match the full-height hero */
+  width: clamp(360px, 32vw, 480px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  bottom: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #1a386b 0%, #0c2041 65%, #07142a 100%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Gold outline ring around the backdrop */
+.hero-image-wrapper::after {
+  content: "";
+  position: absolute;
+  width: clamp(372px, 33vw, 496px); /* slightly larger to frame the circle backdrop */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid #cca248;
+  bottom: calc(6% - 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 28px rgba(204, 162, 72, 0.18);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Transparent portrait photo overlapping the gold circle */
+.hero-image-wrapper__photo {
+  position: relative;
+  z-index: 3; /* sits above gold ring and backdrop */
+  display: block;
+  width: clamp(320px, 28vw, 440px);
+  height: auto;
+  /* Cap height so it never exceeds the wrapper */
+  max-height: 92%;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 0;
+}
+
+/* ---------- Responsive Layout Tweaks ---------- */
+@media (max-width: 991px) {
+  .hero {
+    /* Mobile: no forced full-height; just comfortable section padding */
+    padding: 60px 0;
+    min-height: auto;
+    max-height: none;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 1.75rem;
+  }
+
+  .hero-image-wrapper {
+    order: 2;
+    height: clamp(360px, 60vw, 460px);
+    min-height: auto;
+  }
+
+  .hero-image-wrapper::before,
+  .hero-image-wrapper::after {
+    bottom: 5%;
+  }
+
+  .hero-image-wrapper__photo {
+    width: clamp(280px, 50vw, 380px);
+  }
+
+  .hero__content {
+    order: 1;
+  }
+
+  .hero__dots {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-block: 2rem;
+  }
+
+  .hero__eyebrow {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero__description {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    padding-block: 0.8rem;
+  }
+
+  .hero-image-wrapper {
+    min-height: 360px;
+  }
+
+  .hero-image-wrapper::before {
+    width: 320px;
+  }
+
+  .hero-image-wrapper::after {
+    width: 332px;
+    bottom: calc(5% - 5px);
+  }
+
+  .hero-image-wrapper__photo {
+    width: 280px;
+  }
+}
+
+/* ---------- Short-viewport safeguard (e.g. 1366x768 laptop screens) ---------- */
+@media (max-height: 760px) {
+  .hero {
+    /* Shrink padding on short viewports; min-height is still full-screen minus header */
+    padding-block: 1.25rem;
+  }
+  .hero__title {
+    font-size: clamp(1.85rem, 3.2vw, 2.4rem);
+    margin-bottom: 0.5rem;
+  }
+  .hero__description {
+    margin-bottom: 1rem;
+  }
+  .hero__actions {
+    margin-bottom: 1rem;
+  }
+  .hero-image-wrapper {
+    height: clamp(380px, calc(100vh - var(--header-height) - 2.5rem), 520px);
+  }
+  .hero-image-wrapper::before {
+    width: clamp(300px, 30vw, 380px);
+  }
+  .hero-image-wrapper::after {
+    width: clamp(312px, 31.3vw, 396px);
+  }
+  .hero-image-wrapper__photo {
+    width: clamp(280px, 28vw, 360px);
+  }
+}

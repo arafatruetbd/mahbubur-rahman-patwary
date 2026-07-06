@@ -1,0 +1,56 @@
+/* =========================================================
+   Footer — Mahbubur Rahman Patwary
+   Darker navy bar with centered copyright text.
+   ========================================================= */
+
+.footer {
+  background: var(--color-navy-dark);
+  /* Solid deeper navy, slightly darker than the prefooter band */
+  color: var(--color-white);
+  padding-block: clamp(1.1rem, 2.2vw, 1.6rem);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: clamp(0.82rem, 1.6vw, 0.92rem);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.5;
+}
+
+.footer__sep {
+  display: inline-block;
+  margin: 0 0.55rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+/* ---------- Mobile refinements ---------- */
+@media (max-width: 600px) {
+  /* Allow the copyright line to wrap on small viewports */
+  .footer__copy {
+    font-size: 0.8rem;
+    padding-inline: 0.75rem;
+    max-width: 32ch;
+  }
+  .footer__sep {
+    margin-inline: 0.4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer__sep {
+    /* Hide the pipe on very small screens so the text wraps cleanly */
+    display: none;
+  }
+}

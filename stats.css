@@ -1,0 +1,127 @@
+/* =========================================================
+   Stats Section — Mahbubur Rahman Patwary
+   Light background, four horizontal stat blocks
+   with subtle dividers on desktop, stacked on mobile.
+   ========================================================= */
+
+.stats {
+  background: var(--color-bg);
+  padding-block: clamp(2.5rem, 5vw, 4rem);
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+@media (min-width: 700px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .stats__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+}
+
+/* ---------- Single stat ---------- */
+.stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  position: relative;
+  text-align: left;
+  /* Avoid shrink blowout on tight viewports */
+  min-width: 0;
+}
+
+.stat__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(212, 164, 55, 0.14);
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.stat__body {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.stat__number {
+  font-size: clamp(1.6rem, 2.6vw, 2rem);
+  font-weight: 800;
+  color: var(--color-navy);
+  letter-spacing: -0.5px;
+}
+
+.stat__plus {
+  color: var(--color-gold);
+}
+
+.stat__label {
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* ---------- Desktop vertical dividers ---------- */
+@media (min-width: 1000px) {
+  .stat {
+    padding-inline: 1.5rem;
+  }
+
+  .stat + .stat::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18%;
+    bottom: 18%;
+    width: 1px;
+    background: rgba(11, 29, 58, 0.12);
+  }
+
+  /* Remove the divider on the very first item */
+  .stat:first-child::before {
+    display: none;
+  }
+}
+
+/* ---------- Mobile spacing polish ---------- */
+@media (max-width: 699px) {
+  .stats__grid {
+    gap: 1.1rem;
+  }
+  .stat {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .stat__icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.25rem;
+  }
+  .stat__number {
+    font-size: 1.45rem;
+  }
+  .stat__label {
+    font-size: 0.78rem;
+  }
+}

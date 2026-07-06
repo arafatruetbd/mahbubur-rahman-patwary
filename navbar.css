@@ -1,0 +1,271 @@
+/* =========================================================
+   Navbar — Mahbubur Rahman Patwary
+   Sticky header, brand + nav + CTA on desktop,
+   collapses to a hamburger drawer on mobile.
+   ========================================================= */
+
+/* ---------- Shell ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid rgba(11, 29, 58, 0.06);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding-block: 0.9rem;
+  position: relative;
+}
+
+/* ---------- Brand (logo + name) ---------- */
+.navbar__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--color-navy);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--color-navy);
+  color: var(--color-gold);
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.navbar__name {
+  font-size: 1rem;
+  white-space: nowrap;
+  color: var(--color-navy);
+}
+
+/* ---------- Nav links (desktop inline, mobile drawer) ---------- */
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 1.85rem;
+}
+
+.navbar__link {
+  position: relative;
+  display: inline-block;
+  padding-block: 0.4rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: var(--color-gold);
+}
+
+.navbar__link.is-active {
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.navbar__link.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+/* ---------- CTA (Download CV) ---------- */
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.1rem;
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background: var(--color-navy-dark);
+  color: var(--color-gold);
+  transform: translateY(-1px);
+}
+
+.navbar__cta i {
+  font-size: 1rem;
+}
+
+/* ---------- Hamburger toggle (mobile only) ---------- */
+.navbar__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-navy);
+  border: 1px solid rgba(11, 29, 58, 0.12);
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar__toggle:hover {
+  background: rgba(11, 29, 58, 0.05);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+
+/* Default: mobile layout (drawer hidden, hamburger visible) */
+.navbar__nav {
+  display: none;
+}
+
+.navbar__cta--desktop {
+  display: none;
+}
+
+.navbar__toggle {
+  display: inline-flex;
+}
+
+/* Mobile drawer styles (visible when body has .nav-open) */
+body.nav-open {
+  overflow: hidden;
+}
+
+body.nav-open .navbar__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  border-top: 1px solid rgba(11, 29, 58, 0.08);
+  border-bottom: 1px solid rgba(11, 29, 58, 0.08);
+  padding: 0.5rem 1.25rem 1rem;
+  box-shadow: 0 12px 24px rgba(11, 29, 58, 0.08);
+  animation: navDrop 0.18s ease-out;
+}
+
+body.nav-open .navbar__link {
+  padding: 0.85rem 0.25rem;
+  border-bottom: 1px solid rgba(11, 29, 58, 0.06);
+  font-size: 1rem;
+}
+
+body.nav-open .navbar__link:last-of-type {
+  border-bottom: none;
+}
+
+body.nav-open .navbar__link.is-active::after {
+  left: 0.25rem;
+  right: auto;
+  width: 3px;
+  height: 60%;
+  bottom: auto;
+  top: 20%;
+  border-radius: 2px;
+}
+
+body.nav-open .navbar__cta--mobile {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 0.75rem;
+  padding: 0.85rem 1.1rem;
+}
+
+@keyframes navDrop {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide the in-drawer mobile CTA by default */
+.navbar__cta--mobile {
+  display: none;
+}
+
+/* ---------- Desktop (≥900px) ---------- */
+@media (min-width: 900px) {
+  .navbar__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.85rem;
+    position: static;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    animation: none;
+  }
+
+  .navbar__link {
+    padding-block: 0.4rem;
+    border-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  .navbar__link.is-active::after {
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    width: auto;
+    height: 2px;
+    top: auto;
+  }
+
+  .navbar__cta--desktop {
+    display: inline-flex;
+  }
+
+  .navbar__cta--mobile {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+}
+
+/* ---------- Small-screen polish ---------- */
+@media (max-width: 480px) {
+  .navbar__name {
+    /* Save room on very narrow screens */
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

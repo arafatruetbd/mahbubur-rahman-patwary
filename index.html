@@ -36,10 +36,7 @@
   <!-- ====================== NAVBAR ====================== -->
   <header class="navbar">
     <div class="container navbar__inner">
-      <a href="#" class="navbar__brand" aria-label="Mahbubur Rahman Patwary — Home">
-        <span class="navbar__logo" aria-hidden="true">MRP</span>
-        <span class="navbar__name">Mahbubur Rahman Patwary</span>
-      </a>
+      <a href="#" class="navbar__brand" aria-label="Home"></a>
 
       <nav class="navbar__nav" aria-label="Primary">
         <a href="#" class="navbar__link is-active">Home</a>
@@ -72,15 +69,6 @@
   <!-- ====================== HERO SECTION ====================== -->
   <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="hero-title">
-    <!-- Decorative background elements for slanted polygons and dot grid -->
-    <div class="hero__bg-shapes" aria-hidden="true">
-      <div class="hero__shape hero__shape--left-top"></div>
-      <div class="hero__shape hero__shape--left-mid"></div>
-      <div class="hero__shape hero__shape--right-mid"></div>
-      <div class="hero__shape hero__shape--right-top"></div>
-      <div class="hero__dots"></div>
-    </div>
-
     <div class="container hero__inner">
       <!-- Left: text content -->
       <div class="hero__content">
@@ -93,14 +81,13 @@
           Social Worker <span class="hero__divider">|</span> Entrepreneur
         </p>
         <p class="hero__description">
-          Dedicated to human rights, social justice, and community
-          development. Working for a better society through advocacy,
-          awareness and action.
+          Dedicated to human rights, social justice, and community development.
+          Working for a better society through advocacy, awareness and action.
         </p>
 
         <div class="hero__actions">
           <a href="#about" class="btn btn--primary">
-            <i class="bi bi-person"></i>
+            <i class="bi bi-person-badge"></i>
             Learn More About Me
           </a>
           <a href="#contact" class="btn btn--outline">
@@ -111,13 +98,13 @@
 
         <ul class="hero__socials" aria-label="Social links">
           <li>
-            <a href="#" aria-label="Facebook" class="social-icon">
+            <a href="https://www.facebook.com/mahbuburrahmanpatwary" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon">
               <i class="bi bi-facebook"></i>
             </a>
           </li>
           <li>
             <a href="#" aria-label="Twitter" class="social-icon">
-              <i class="bi bi-twitter"></i>
+              <i class="bi bi-twitter-x"></i>
             </a>
           </li>
           <li>
@@ -131,14 +118,20 @@
             </a>
           </li>
           <li>
-            <a href="#" aria-label="Email" class="social-icon">
-              <i class="bi bi-envelope"></i>
+            <a href="mailto:mahbub@marketbangla.co" aria-label="Email" class="social-icon">
+              <i class="bi bi-envelope-fill"></i>
             </a>
           </li>
         </ul>
       </div>
 
       <!-- Right: portrait composition -->
+      <!--
+        Single wrapper holds:
+          ::before  -> dark navy circular backdrop
+          ::after   -> thin gold circular outline
+          <img>     -> the actual portrait, layered above
+      -->
       <div class="hero-image-wrapper">
         <img
           class="hero-image-wrapper__photo"
@@ -461,8 +454,8 @@
             <span class="prefooter__contact-icon" aria-hidden="true">
               <i class="bi bi-envelope-fill"></i>
             </span>
-            <a href="mailto:mahbub.patwary@email.com" class="prefooter__contact-link">
-              mahbub.patwary@email.com
+            <a href="mailto:mahbub@marketbangla.co" class="prefooter__contact-link">
+              mahbub@marketbangla.co
             </a>
           </li>
           <li class="prefooter__contact-item">
@@ -475,7 +468,7 @@
 
         <ul class="prefooter__socials" aria-label="Social links">
           <li>
-            <a href="#" aria-label="Facebook" class="prefooter__social">
+            <a href="https://www.facebook.com/mahbuburrahmanpatwary" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="prefooter__social">
               <i class="bi bi-facebook"></i>
             </a>
           </li>
